@@ -28,12 +28,12 @@ if __name__ == "__main__":
 
     # cold start
     for i in range(8):
-        futures.append(pool.submit(return_future_result, ("world: %d" % i)))
+        futures.append(pool.submit(return_future_result, ("world: %d" % i, 22)))
 
     count = 8
     while len(futures) > 0 and count < 50:
         if len(futures) <= 6:
-            futures.append(pool.submit(return_future_result, ("world: %d" % count)))
+            futures.append(pool.submit(return_future_result, ("world: %d" % count, 22)))
             count += 1
 
         for f in futures:
