@@ -35,3 +35,8 @@ space = {"n_iter":hp.choice("n_iter",range(30,50)),
          "eta":hp.uniform("eta",0.05,0.5)}
 
 print hyperopt.pyll.stochastic.sample(space)
+
+space1 = {
+    'a': hp.quniform('b', 1, 10, 3)
+}
+print hyperopt.pyll.stochastic.sample(space1)
